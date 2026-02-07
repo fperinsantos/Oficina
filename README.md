@@ -1,88 +1,94 @@
-📌 Projeto Banco de Dados – Sistema de Oficina Mecânica
+# 🚗 Sistema de Banco de Dados — Oficina Mecânica
 
-Este repositório apresenta o desenvolvimento de um banco de dados relacional para o gerenciamento de uma oficina mecânica, contemplando clientes, veículos, mecânicos, ordens de serviço, serviços e peças. O projeto foi elaborado a partir da modelagem conceitual em ER, convertida para o modelo lógico e implementada em SQL.
+Este repositório contém a modelagem, implementação e consultas SQL de um banco de dados para o gerenciamento de uma oficina mecânica.
 
-📂 Estrutura do Repositório
+---
 
-O projeto está organizado nos seguintes arquivos:
+## 📌 Objetivo do Projeto
 
+Desenvolver um banco de dados relacional para controlar:
+
+- Clientes  
+- Veículos  
+- Mecânicos  
+- Ordens de serviço  
+- Serviços  
+- Peças  
+- Relacionamentos entre entidades  
+
+Atendendo aos requisitos do desafio proposto na disciplina de Banco de Dados.
+
+---
+
+## 🗂️ Estrutura do Repositório
+
+| Arquivo | Descrição |
+|---------|-----------|
+| `oficina_database.sql` | Criação do banco e das tabelas |
+| `oficina_values.sql` | Inserção de dados para testes |
+| `oficina_query.sql` | Consultas SQL avançadas |
+
+---
+
+## 🧩 Modelo Lógico
+
+O projeto foi desenvolvido com base no modelo relacional, contemplando:
+
+- Relacionamentos 1:N e N:N  
+- Chaves primárias e estrangeiras  
+- Restrições de integridade  
+- Uso de ENUM, DEFAULT e CHECK  
+
+Principais relacionamentos:
+
+- Cliente → Veículo  
+- Veículo → Ordem de Serviço  
+- Ordem → Serviço  
+- Ordem → Peça  
+- Ordem → Mecânico  
+
+---
+
+## 📊 Funcionalidades
+
+O sistema permite:
+
+✔ Cadastro de clientes, veículos e mecânicos  
+✔ Registro de ordens de serviço  
+✔ Controle de serviços e peças  
+✔ Acompanhamento do status das ordens  
+✔ Análises por meio de consultas SQL  
+
+---
+
+## 🔍 Consultas Implementadas
+
+As queries contemplam:
+
+- SELECT (consultas básicas)
+- WHERE (filtros)
+- ORDER BY (ordenação)
+- JOIN (junções)
+- HAVING (filtros em grupos)
+- Funções agregadas (COUNT, SUM, AVG)
+- Atributos derivados
+
+Exemplos de análises:
+
+- Total de serviços por ordem  
+- Mecânicos mais ativos  
+- Ordens com maior custo  
+- Consumo de peças  
+- Faturamento por período  
+
+---
+
+## ▶️ Como Executar
+
+1. Abra seu gerenciador MySQL (Workbench, DBeaver, etc)
+2. Execute na ordem:
+
+```sql
 oficina_database.sql
-Script responsável pela criação do banco de dados, tabelas, chaves primárias, estrangeiras e restrições (constraints).
-
 oficina_values.sql
-Script para inserção de dados de teste, permitindo a validação e simulação do funcionamento do sistema.
-
 oficina_query.sql
-Script contendo consultas SQL avançadas para análise e extração de informações do banco.
-
-🗃️ Modelagem do Banco
-
-O banco de dados foi estruturado com as seguintes entidades principais:
-
-Cliente
-
-Veículo
-
-Mecânico
-
-Ordem de Serviço
-
-Serviço
-
-Peça
-
-Além disso, foram implementadas tabelas associativas para representar relacionamentos muitos-para-muitos entre ordens, serviços, peças e mecânicos.
-
-Foram aplicadas:
-
-Chaves primárias e estrangeiras
-
-Restrições de unicidade
-
-Validações com CHECK
-
-Regras de integridade referencial
-
-🔍 Funcionalidades das Consultas
-
-As queries implementadas contemplam:
-
-Recuperações simples com SELECT
-
-Filtros com WHERE
-
-Cálculos e atributos derivados
-
-Ordenações com ORDER BY
-
-Agrupamentos com GROUP BY e HAVING
-
-Junções entre múltiplas tabelas (JOIN)
-
-Essas consultas permitem responder questões como:
-
-Total gasto por cliente
-
-Serviços mais realizados
-
-Mecânicos com mais ordens
-
-Valor total das ordens
-
-Controle de estoque
-
-Análise por status
-
-▶️ Como Executar o Projeto
-
-Execute o arquivo oficina_database.sql para criar o banco e as tabelas.
-
-Execute o arquivo oficina_values.sql para inserir os dados.
-
-Execute o arquivo oficina_query.sql para testar as consultas.
-
-Os scripts podem ser executados em ambientes compatíveis com MySQL/MariaDB.
-
-🎯 Objetivo do Projeto
-
-Este projeto tem como objetivo aplicar os conceitos de modelagem de dados, normalização, implementação em SQL e construção de consultas avançadas no contexto de um sistema de oficina mecânica, conforme proposto no desafio do módulo de banco de dados.
